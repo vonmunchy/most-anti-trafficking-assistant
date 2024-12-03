@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,6 +37,54 @@
 </head>
 <body>
     <div class="chat-container">
+        <iframe src="https://copilotstudio.microsoft.com/environments/Default-4ca7e3aa-b0a5-45a5-a53c-b7860dd1e299/bots/cr864_ictMasterPlan2/webchat?__version__=2"></iframe>
+    </div>
+</body>
+</html>
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Chat with Border</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #202123; /* Dark background */
+        }
+
+        .iframe-container {
+            width: 100%; /* Full width on mobile by default */
+            height: 100vh; /* Always take up 100% of viewport height */
+            max-width: 100%; /* Restrict to 50% width on desktops */
+            border: 2px solid #444; /* Add a visible border */
+            border-radius: 10px; /* Optional: Rounded corners for a modern look */
+            overflow: hidden; /* Prevent any iframe content from overflowing */
+        }
+
+        /* Apply this for larger screens (desktop) */
+        @media (min-width: 768px) {
+            .iframe-container {
+                width: 50%; /* Use 50% of the screen width on desktop */
+            }
+        }
+
+        iframe {
+            width: 100%; /* Fill the container's width */
+            height: 100%; /* Fill the container's height */
+            border: none; /* Ensure no additional iframe borders */
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-container">
         <iframe src="https://copilotstudio.microsoft.com/environments/Default-4ca7e3aa-b0a5-45a5-a53c-b7860dd1e299/bots/cr864_ictMasterPlan2/webchat?__version__=2"></iframe>
     </div>
 </body>
