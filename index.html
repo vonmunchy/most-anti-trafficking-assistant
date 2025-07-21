@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot</title>
+    <title>Anti-Human Trafficking Assistant Chat</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -15,29 +15,54 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh; /* Use min-height to ensure it takes full viewport height */
+            overflow: hidden; /* Prevent body scroll, iframe will handle its own scroll */
         }
         .chat-container {
-            width: 90%; /* Slight padding on desktop */
-            max-width: 400px; /* Ideal width for desktop */
-            height: 90vh; /* Slight padding at top and bottom */
-            max-height: 700px; /* Restrict height on larger screens */
+            width: 100%; /* Take full width on all screens */
+            height: 100vh; /* Take full height on all screens */
             background-color: #3c3f41; /* Dark container color */
             border: 1px solid #2b2d2f; /* Subtle border for distinction */
-            border-radius: 10px; /* Rounded corners for a modern look */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
-            overflow: hidden; /* Prevent scrollbars from showing */
+            border-radius: 0; /* No border radius for full-screen feel */
+            box-shadow: none; /* No shadow for a cleaner look */
+            overflow: hidden; /* Prevent container scrollbars */
+            display: flex; /* Use flexbox for the container to manage iframe */
+            flex-direction: column; /* Stack children vertically */
         }
+        /* Removed .chat-header as it's no longer needed without the button */
         iframe {
             width: 100%;
-            height: 100%;
+            height: 100%; /* Occupy all available space within the flex container */
             border: none; /* Remove border around iframe */
+            flex-grow: 1; /* Allow iframe to grow and fill available space */
+        }
+
+        /* Removed styling for the "New Chat" button as the button is removed */
+
+        /* Media queries for better responsiveness on smaller screens */
+        @media (max-width: 600px) {
+            body {
+                align-items: flex-start; /* Align to top on mobile to give more space */
+            }
+            .chat-container {
+                border-radius: 0; /* Ensure no border radius on mobile */
+                box-shadow: none; /* Ensure no shadow on mobile */
+            }
         }
     </style>
 </head>
 <body>
     <div class="chat-container">
-        <iframe src="https://copilotstudio.microsoft.com/environments/Default-031bb776-5243-41b5-899b-29e5a9f6840d/bots/cra41_antiHumanTraffickingConferenceAssistan/webchat?__version__=2"></iframe>
+        <!-- The iframe for the chatbot -->
+        <iframe id="chatbotIframe" src="https://copilotstudio.microsoft.com/environments/Default-031bb776-5243-41b5-899b-29e5a9f6840d/bots/cra41_antiHumanTraffickingConferenceAssistan/webchat?__version__=2"></iframe>
     </div>
+
+    <script>
+        // The startNewChat function is no longer needed without the button
+        // function startNewChat() {
+        //     const iframe = document.getElementById('chatbotIframe');
+        //     iframe.src = iframe.src;
+        // }
+    </script>
 </body>
 </html>
