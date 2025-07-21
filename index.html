@@ -29,15 +29,12 @@
             display: flex; /* Use flexbox for the container to manage iframe */
             flex-direction: column; /* Stack children vertically */
         }
-        /* Removed .chat-header as it's no longer needed without the button */
         iframe {
             width: 100%;
             height: 100%; /* Occupy all available space within the flex container */
             border: none; /* Remove border around iframe */
             flex-grow: 1; /* Allow iframe to grow and fill available space */
         }
-
-        /* Removed styling for the "New Chat" button as the button is removed */
 
         /* Media queries for better responsiveness on smaller screens */
         @media (max-width: 600px) {
@@ -47,6 +44,9 @@
             .chat-container {
                 border-radius: 0; /* Ensure no border radius on mobile */
                 box-shadow: none; /* Ensure no shadow on mobile */
+                /* Added padding to the bottom for mobile to prevent overlap with keyboard */
+                padding-bottom: 20px; /* Adjust this value as needed for desired spacing */
+                box-sizing: border-box; /* Include padding in the element's total width and height */
             }
         }
     </style>
@@ -58,11 +58,7 @@
     </div>
 
     <script>
-        // The startNewChat function is no longer needed without the button
-        // function startNewChat() {
-        //     const iframe = document.getElementById('chatbotIframe');
-        //     iframe.src = iframe.src;
-        // }
+        // No JavaScript function needed as the button was removed
     </script>
 </body>
 </html>
